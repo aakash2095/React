@@ -1,36 +1,51 @@
-import { useState } from 'react'
-import './App.css'
+// import { useState } from 'react'
+// import './App.css'
+// import Counter from './components/counter';
+
+// function App() {
+//   const [count, setCount] = useState(0);
+
+//   return (
+//     <>
+//      <Counter ></Counter>
+//     </>
+//   )
+// }
+
+// export default App;
+
+
+import { useState } from 'react';
+
+import './App.css';
+import Counter from "./components/counter";
 
 function App() {
-  
+
   const [count, setCount] = useState(0)
   
-  const Increase=()=>{
-    setCount(count + 1)
-  }
+    const increment = () => {
+      setCount(count + 1)
+    }
+  
+    const decrement = () => {
+      {if (count>0)
+      setCount(count - 1)
+    }
+    }
+  
+    const reset = () => {
+      setCount(0)
+    }
 
-  const Decrease=()=>{
-    {if (count>0) {
-      
-      setCount(count - 1) 
-    }}
-  }
-
-
-  const Reset=()=>{
-    setCount(0)
-  }
 
   return (
-    <>
-     <h1>{count}</h1>
-     
-     <button className='btn' type='button' onClick={Increase}>Increase</button> 
-     <button className='btn' type='button' onClick={Decrease}>Decrease</button> 
-     <button className='btn' type='button' onClick={Reset}>Reset</button> 
-
-    </>
+  <>
+  <Counter count={count} increment={increment} decrement={decrement} reset={reset}/>
+  </>
   )
 }
 
-export default App
+export default App;
+
+
