@@ -1,0 +1,5 @@
+[
+
+    {"'id": 1 , "city" : "Mumbai" , "Temperature": "30c" , "Weather": "Foggy"},
+    {"'id": 2 , "city" : "Kolkata" , "Temperature": "20c" , "Weather": "Cloudy"}
+]
