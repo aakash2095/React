@@ -5,6 +5,7 @@ import Home from './components/Home'
 import Products from './components/Products'
 import Cart from './components/Cart'
 import ProductDetails from './components/ProductDetails'
+import NotFound from './components/NotFound'
 
 function App() {
   
@@ -21,10 +22,15 @@ function App() {
           <Route path='/' element={<Home/>}></Route>
           <Route path='/Products' element={<Products/>}></Route>
           <Route path='/Cart' element={<Cart/>}></Route>
-          <Route path='/PRoducts/:id' element={<ProductDetails/>}></Route>
+          <Route path='/Products/:id' element={<ProductDetails/>}></Route>
+          <Route path='/*' element={<NotFound/>}></Route>
+
 
         </Routes>
       </Router>
+
+
+
     </>
   )
 }
