@@ -22,13 +22,54 @@ const SearchedMoviePage = () => {
   const [loading, setLoading] = useState(true)
 
   const query = usequery().get('query');  // search?query=Wakeupsid
+
+  useEffect(() => {
+    const fetchMovie = async() => {
+      if (query) {
+        setLoading(true)
+        try {
+          const response = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-us&query=${query}&page=1`)
+          const data = await response.json();
+          setMovies(data.results || [])
+          console.log(data.results)
+        } catch (err) {
+          console.error('Failed to fetch',err)
+        }
+        finally{
+          setLoading(false)
+        }
+      }
+    }
+  
+    fetchMovie();
+  }, [query])
+  
   
 
 
   
   return (
-    <div>SearchedMoviePage</div>
+    <div className='searched-Movie'>
+    <h2>Searched Movies</h2>
+    <div className='movie-grid'>
+      {loading ? (
+        <p>Loading movies...</p> 
+      ) : movies.length > 0 ? (
+        movies.map((movie) => (
+          <Moviecard key={movie.id} movie={movie} />
+        ))
+      ) : (
+        <p>No movies found for "{query}".</p> 
+      )}
+    </div>
+  </div>
   )
 }
 
 export default SearchedMoviePage
+
+
+
+/*
+condition ? Executes if true : executes if false  
+*/

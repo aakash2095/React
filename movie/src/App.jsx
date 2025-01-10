@@ -20,7 +20,7 @@ function App() {
         <Route>
         <Route path='/' element={<HomePage/>}/>
         <Route path='/top-rated' element={<TopRatedPage/>}/>
-        <Route path='/searched-movie' element={<SearchedMoviePage/>}/> 
+        <Route path='/search' element={<SearchedMoviePage/>}/> 
         <Route path='/movie/:id' element={<MovieDetails/>}/>
         <Route path='/upcoming-Page' element={<UpcomingPage/>}/>
         </Route>

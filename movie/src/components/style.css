@@ -69,3 +69,8 @@
     color: #ff5722;
   }
   
+
+div{
+  display: inline-block;
+  padding-left: 10px;
+}
