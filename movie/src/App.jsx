@@ -7,6 +7,8 @@ import SearchedMoviePage from './pages/SearchedMoviePage'
 import TopRatedPage from './pages/TopRatedPage'
 import UpcomingPage from './pages/UpcomingPage'
 import MovieDetails from './components/MovieDetails'
+import ErrorBoundary from './components/ErrorBoundary'
+
 
 
 function App() {
@@ -15,6 +17,7 @@ function App() {
   return (
     <>
      <Router>
+      <ErrorBoundary>
       <Navbar/>
       <Routes>
         <Route>
@@ -25,6 +28,7 @@ function App() {
         <Route path='/upcoming-Page' element={<UpcomingPage/>}/>
         </Route>
       </Routes>
+      </ErrorBoundary>
      </Router>
     </>
   )

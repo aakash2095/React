@@ -1,20 +1,23 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './style.css';
 
 const IMG_PATH = 'https://image.tmdb.org/t/p/w500';
 
-const Moviecard = ({movie}) => {
+const Moviecard = ({ movie }) => {
   return (
-    <div>
-      <Link to={`/movie/${movie.id}`}>
-      <img src={`${IMG_PATH}/${movie.poster_path}`} alt={movie.title} />
-      <h3>{movie.title}</h3>
-      <p>IMDb Rating : {movie.vote_average}</p>
+    <div className="movie-card">
+      <Link to={`/movie/${movie.id}`} className="movie-link">
+        <img 
+          src={`${IMG_PATH}/${movie.poster_path}`} 
+          alt={movie.title} 
+          className="movie-poster" 
+        />
+        <h3 className="movie-title">{movie.title}</h3>
+        <p className="movie-rating">IMDb Rating: {movie.vote_average}</p>
       </Link>
-      <hr/><br />
     </div>
-  )
-}
+  );
+};
 
-export default Moviecard
+export default Moviecard;
