@@ -42,7 +42,18 @@ dosen't catch:
 
 */
 
+// Memoization- memoization is an optimization technique that helps to improve performance by caching the results of expensive 
+// function calls and reusing the cached result when the same inputs occur again.
 
+// function child({props}){
+//     displaying props 
+// }
+
+// function parent {
+//     const [props, setprops] = useState(0)
+//     setprops(10)
+//     <child props ={props}/>
+// }
 
 
 
